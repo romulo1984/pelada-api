@@ -17,6 +17,11 @@
 |     Make sure to pass relative path from the project root.
 */
 
+var time = require('time')(Date)
+
+var d = new Date()
+d.setTimezone('America/Sao_Paulo')
+
 const { Ignitor } = require('@adonisjs/ignitor')
 
 new Ignitor(require('@adonisjs/fold'))

@@ -35,7 +35,8 @@ module.exports = {
   sqlite: {
     client: 'sqlite3',
     connection: {
-      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.sqlite`)
+      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.sqlite`),
+      charset: 'utf8'
     },
     useNullAsDefault: true,
     debug: Env.get('DB_DEBUG', false)
@@ -58,7 +59,15 @@ module.exports = {
       port: Env.get('DB_PORT', ''),
       user: Env.get('DB_USER', CLEARDB_DATABASE_URL.username),
       password: Env.get('DB_PASSWORD', CLEARDB_DATABASE_URL.password),
-      database: Env.get('DB_DATABASE', CLEARDB_DATABASE_URL.pathname.substr(1))
+      database: Env.get('DB_DATABASE', CLEARDB_DATABASE_URL.pathname.substr(1)),
+      charset: 'utf8'
+    },
+    pool: {
+      afterCreate: function (connection, callback) {
+        connection.query('SET time_zone = timezone;', function (err) {
+          callback(err, connection);
+        });
+      }
     },
     debug: Env.get('DB_DEBUG', false)
   },

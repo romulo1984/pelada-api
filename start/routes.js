@@ -17,5 +17,25 @@
 const Route = use('Route')
 
 Route.group(() => {
+  Route.resource('user', 'UserController')
+}).prefix('api/')
+
+Route.group(() => {
   Route.resource('pelada', 'PeladaController')
+}).prefix('api/')
+
+Route.group(() => {
+  Route.resource('confirmation', 'ConfirmationController')
+}).prefix('api/')
+
+Route.group(() => {
+  Route.resource('player', 'PlayerController')
+}).prefix('api/')
+
+Route.group(() => {
+  Route.resource('period', 'PeriodController')
+}).prefix('api/')
+
+Route.group(() => {
+  Route.resource('order', 'OrderController')
 }).prefix('api/')

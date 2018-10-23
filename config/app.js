@@ -16,7 +16,7 @@ module.exports = {
   |
   */
 
-  name: Env.get('APP_NAME', 'AdonisJs'),
+  name: Env.get('APP_NAME', 'Pelada API'),
 
   /*
   |--------------------------------------------------------------------------
@@ -173,7 +173,7 @@ module.exports = {
     | based on HTTP headers/query string.
     |
     */
-    locale: 'en'
+    locale: 'pt_br'
   },
 
   logger: {
