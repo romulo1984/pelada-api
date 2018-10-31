@@ -12,8 +12,7 @@ class ConfirmationController {
    * Show a list of all confirmations.
    * GET confirmations
    */
-  async index({ request, response, view }) {
-  }
+  async index({ request, response, view }) {}
 
   /**
    * Create/save a new confirmation.
@@ -34,22 +33,19 @@ class ConfirmationController {
    * Display a single confirmation.
    * GET confirmations/:id
    */
-  async show({ params, request, response, view }) {
-  }
+  async show({ params, request, response, view }) {}
 
   /**
    * Update confirmation details.
    * PUT or PATCH confirmations/:id
    */
-  async update({ params, request, response }) {
-  }
+  async update({ params, request, response }) {}
 
   /**
    * Delete a confirmation with id.
    * DELETE confirmations/:id
    */
-  async destroy({ params, request, response }) {
-  }
+  async destroy({ params, request, response }) {}
 }
 
 module.exports = ConfirmationController
