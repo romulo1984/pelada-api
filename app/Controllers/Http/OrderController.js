@@ -27,22 +27,19 @@ class OrderController {
    * Display a single order.
    * GET orders/:id
    */
-  async show({ params, request, response, view }) {
-  }
+  async show({ params, request, response, view }) {}
 
   /**
    * Update order details.
    * PUT or PATCH orders/:id
    */
-  async update({ params, request, response }) {
-  }
+  async update({ params, request, response }) {}
 
   /**
    * Delete a order with id.
    * DELETE orders/:id
    */
-  async destroy({ params, request, response }) {
-  }
+  async destroy({ params, request, response }) {}
 }
 
 module.exports = OrderController

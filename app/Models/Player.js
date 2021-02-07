@@ -11,7 +11,7 @@ class Player extends Model {
      * A hook to hash the user password before saving
      * it to the database.
      */
-    this.addHook('afterFind', async (playerInstance) => {
+    this.addHook('afterFind', async playerInstance => {
       const orders = await playerInstance
         .orders()
         .where('status', 'pending')
@@ -33,7 +33,6 @@ class Player extends Model {
   orders() {
     return this.hasMany('App/Models/Order')
   }
-
 }
 
 module.exports = Player

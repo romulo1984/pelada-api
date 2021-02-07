@@ -10,8 +10,7 @@ class UserController {
    * Show a list of all players.
    * GET players
    */
-  async index({ request, response, view }) {
-  }
+  async index({ request, response, view }) {}
 
   /**
    * Create/save a new player.
@@ -26,22 +25,19 @@ class UserController {
    * Display a single player.
    * GET players/:id
    */
-  async show({ params, request, response, view }) {
-  }
+  async show({ params, request, response, view }) {}
 
   /**
    * Update player details.
    * PUT or PATCH players/:id
    */
-  async update({ params, request, response }) {
-  }
+  async update({ params, request, response }) {}
 
   /**
    * Delete a player with id.
    * DELETE players/:id
    */
-  async destroy({ params, request, response }) {
-  }
+  async destroy({ params, request, response }) {}
 }
 
 module.exports = UserController

@@ -19,7 +19,15 @@ class PeladaController {
    * POST peladas
    */
   async store({ request }) {
-    const data = request.only(['title', 'info', 'date', 'seats', 'location', 'status', 'period_id'])
+    const data = request.only([
+      'title',
+      'info',
+      'date',
+      'seats',
+      'location',
+      'status',
+      'period_id',
+    ])
     return await Pelada.create(data)
   }
 
@@ -28,10 +36,9 @@ class PeladaController {
    * GET peladas/:id
    */
   async show({ params }) {
-    const pelada = await Pelada
-      .query()
+    const pelada = await Pelada.query()
       .where('id', params.id)
-      .with('confirmations', (builder) => {
+      .with('confirmations', builder => {
         builder.with('player').orderBy('updated_at', 'desc')
       })
       .fetch()
@@ -45,7 +52,17 @@ class PeladaController {
    */
   async update({ params, request }) {
     const pelada = await Pelada.findOrFail(params.id)
-    pelada.merge(request.only(['title', 'info', 'date', 'seats', 'location', 'status', 'period_id']))
+    pelada.merge(
+      request.only([
+        'title',
+        'info',
+        'date',
+        'seats',
+        'location',
+        'status',
+        'period_id',
+      ])
+    )
 
     await pelada.save()
     return pelada

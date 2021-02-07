@@ -10,8 +10,7 @@ class PlayerController {
    * Show a list of all players.
    * GET players
    */
-  async index({ request, response, view }) {
-  }
+  async index({ request, response, view }) {}
 
   /**
    * Create/save a new player.
@@ -36,15 +35,13 @@ class PlayerController {
    * Update player details.
    * PUT or PATCH players/:id
    */
-  async update({ params, request, response }) {
-  }
+  async update({ params, request, response }) {}
 
   /**
    * Delete a player with id.
    * DELETE players/:id
    */
-  async destroy({ params, request, response }) {
-  }
+  async destroy({ params, request, response }) {}
 }
 
 module.exports = PlayerController
